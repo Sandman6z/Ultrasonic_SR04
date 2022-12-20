@@ -6,20 +6,20 @@ void SR04_Init(void)
 {
 	/* 初始化Trip */
 	GPIO_InitTypeDef  GPIO_InitStructure;	
-  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);	 //使能PC端口时钟
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);	 //使能PC端口时钟
 	
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;				 //Trip-->PC1端口配置
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;				 //Trip-->PC1端口配置
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 		 //推挽输出
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 //IO口速度为50MHz
-	GPIO_Init(GPIOC, &GPIO_InitStructure);					 //根据设定参数初始化GPIOC1
+	GPIO_Init(GPIOB, &GPIO_InitStructure);					 //根据设定参数初始化GPIOC1
 	
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2;				 //Echo-->PC2端口配置
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;				 //Echo-->PC2端口配置
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD;  //下拉输入
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 //IO口速度为50MHz
-	GPIO_Init(GPIOC, &GPIO_InitStructure);					 //根据设定参数初始化GPIOC2
+	GPIO_Init(GPIOB, &GPIO_InitStructure);					 //根据设定参数初始化GPIOC2
 	
-	GPIO_ResetBits(GPIOC,GPIO_Pin_1); //Trip先拉低
-	GPIO_ResetBits(GPIOC,GPIO_Pin_2); //Echo也拉低
+	GPIO_ResetBits(GPIOB, GPIO_Pin_0); //Trip先拉低
+	GPIO_ResetBits(GPIOB, GPIO_Pin_1); //Echo也拉低
 	TIM4_Init(65535,71);
 }
 
@@ -60,8 +60,3 @@ float SR04_Getlen(void)
 	time = TIM_GetCounter(TIM4);
 	return time;
 }
-
-
-
-
-

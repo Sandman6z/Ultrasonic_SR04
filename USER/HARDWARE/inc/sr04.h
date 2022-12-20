@@ -4,8 +4,8 @@
 #include "delay.h"
 
 
-#define Trip PCout(1)
-#define Echo PCin(2)
+#define Trip PBout(0)
+#define Echo PBin(1)
 
 extern float time;
 

@@ -7,9 +7,9 @@
 ".\objects\oledfont.o"
 ".\objects\sr04.o"
 ".\objects\key.o"
+".\objects\usart.o"
 ".\objects\delay.o"
 ".\objects\sys.o"
-".\objects\usart.o"
 ".\objects\misc.o"
 ".\objects\stm32f10x_adc.o"
 ".\objects\stm32f10x_bkp.o"
@@ -34,7 +34,7 @@
 ".\objects\stm32f10x_usart.o"
 ".\objects\stm32f10x_wwdg.o"
 ".\objects\core_cm3.o"
-".\objects\startup_stm32f10x_hd.o"
+".\objects\startup_stm32f10x_md.o"
 --strict --scatter ".\Objects\Project.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
