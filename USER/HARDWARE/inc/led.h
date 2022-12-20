@@ -4,8 +4,7 @@
 
 
 
-#define LED0 PBout(5)// PB5
-#define LED1 PEout(5)// PE5	
+#define LED PCout(13)// PB5
 
 void LED_Init(void);//≥ı ºªØ
 

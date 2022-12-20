@@ -52,7 +52,7 @@ int main(void)
 	
  	while(1)
 	{
-		LED0 =!LED0;
+		LED =!LED;
 		key=KEY_Scan(0);	//µÃµ½¼üÖµ
 		if (key)
 		{
